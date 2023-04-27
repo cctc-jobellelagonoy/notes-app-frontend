@@ -45,11 +45,9 @@ textarea::-webkit-scrollbar-thumb {
 }
 .notes{
   padding: 1rem;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
 }
 .note{
   background-color: rgba(0, 0, 0, 0.20000000298023224);
@@ -61,8 +59,15 @@ textarea::-webkit-scrollbar-thumb {
   border-width: 1px;
 }
 
+@media (min-width: 300px) {
+  .notes {   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+
 @media (min-width: 600px) {
 .notes { grid-template-columns: repeat(2, 1fr); }
+
 }
 
 @media (min-width: 900px) {
