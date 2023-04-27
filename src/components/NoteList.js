@@ -54,8 +54,12 @@ const NoteList = () => {
   };
   
 
-
   const handleCreate = async () => {
+    if (!newNote.title.trim() || !newNote.body.trim()) {
+      alert("Title and body cannot be empty!");
+      return;
+    }
+  
     const response = await axios.post("https://notes-app-backend-php.herokuapp.com/api/notes", {
       ...newNote,
       status: 0,
