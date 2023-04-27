@@ -14,7 +14,7 @@ const NoteList = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get("http://notes-app-backend-php.herokuapp.com/api/notes");
+        const response = await axios.get("https://notes-app-backend-php.herokuapp.com/api/notes");
         if (Array.isArray(response.data.data)) {
           setNotes(response.data.data);
         } else {
@@ -42,7 +42,7 @@ const NoteList = () => {
     );
   
     try {
-      await axios.put(`http://notes-app-backend-php.herokuapp.com/api/notes/${noteId}`, updatedNote);
+      await axios.put(`https://notes-app-backend-php.herokuapp.com/api/notes/${noteId}`, updatedNote);
     } catch (error) {
       console.error("Error updating note status:", error);
       setNotes(
@@ -56,7 +56,7 @@ const NoteList = () => {
 
 
   const handleCreate = async () => {
-    const response = await axios.post("http://notes-app-backend-php.herokuapp.com/api/notes", {
+    const response = await axios.post("https://notes-app-backend-php.herokuapp.com/api/notes", {
       ...newNote,
       status: 0,
     });
@@ -68,7 +68,7 @@ const NoteList = () => {
 
 
   const handleEdit = async (noteId, key, newValue) => {
-    await axios.put(`http://notes-app-backend-php.herokuapp.com/api/notes/${noteId}`, {
+    await axios.put(`https://notes-app-backend-php.herokuapp.com/api/notes/${noteId}`, {
       [key]: newValue,
     });
     setNotes(notes.map((note) => (note.id === noteId ? { ...note, [key]: newValue } : note)));
@@ -77,7 +77,7 @@ const NoteList = () => {
 
 
   const handleDelete = async (noteId) => {
-    await axios.delete(`http://notes-app-backend-php.herokuapp.com/api/notes/${noteId}`);
+    await axios.delete(`https://notes-app-backend-php.herokuapp.com/api/notes/${noteId}`);
     setNotes(notes.filter((note) => note.id !== noteId));
   };
 
