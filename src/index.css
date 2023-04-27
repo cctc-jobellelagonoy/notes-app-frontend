@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  background-color: rgba(103, 42, 163, 1);
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+textarea::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(69, 33, 101, 0.8); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.container{
+  padding: 1rem;
+  width: 70%;
+  height: 625px;
+  margin: auto;
+}
+.app-title{
+  color: white;
+  padding: 1rem;
+  font-size: 33px;
+  font-style: Bold;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.notes{
+  padding: 1rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+}
+.note{
+  background-color: rgba(0, 0, 0, 0.20000000298023224);
+  padding: 1rem;
+  height: 10rem;
+  border-radius: 15px;
+  border-color: rgba(255, 255, 255, 0.20000000298023224);
+  border-style: solid;
+  border-width: 1px;
+}
+
+@media (min-width: 600px) {
+.notes { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+.notes { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+.note-title{
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+}
+
+.note-title input[type="text"]{
+  font-style: bold;
+  text-align: left;
+  font-family:sans-serif;
+  font-weight: 550;
+  line-height: normal;
+  width: 100%;
+  font-size: 16px;
+  margin: auto;
+  font-stretch: normal;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.note-body{
+  margin-right: auto;
+  margin-left: auto;
+  padding: 5px;
+}
+
+.note-body textarea{
+  background: transparent;
+  border: none;
+  text-align: left;
+  resize: none;
+  font-family:sans-serif;
+  line-height: normal;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  margin: auto;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.action-delete{
+  float: right;
+}
+
+.action-save{
+  float: right;
+}
+
+.action-status{
+  float: left;
+}
+
+.regular-checkbox {
+  appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-checkbox:active, .regular-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #2f363c;
+}
+
+.regular-checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #2f363c;
+}
+
+
+.note-action button{
+  padding: 0;
+  border: none;
+  height: fit-content;
+  background: transparent;
+}
+
+.note-action button img{
+  padding: 0;
+  border: none;
+  background: transparent;
+}
